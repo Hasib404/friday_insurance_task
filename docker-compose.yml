@@ -1,0 +1,14 @@
+version: "3.7"
+
+services:
+  api:
+    container_name: friday-app
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    command: uvicorn main:app --host 0.0.0.0 --port 80 --reload
+    volumes:
+      - ./app:/app
+    ports:
+      - 80:80
+
