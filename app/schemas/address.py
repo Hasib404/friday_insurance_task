@@ -1,3 +1,4 @@
+from typing import Optional
 from pydantic import BaseModel
 
 
@@ -8,4 +9,5 @@ class AddressRequestModel(BaseModel):
 
 # Define Response Model
 class AddressResponseModel(BaseModel):
-    address: dict
+    street: str
+    housenumber: Optional[str] = None
